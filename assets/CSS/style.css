@@ -1,0 +1,8 @@
+/* Wildcard selector to override default browser styles */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* General style rules */
