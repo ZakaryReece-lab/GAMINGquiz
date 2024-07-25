@@ -6,6 +6,20 @@
     margin: 0;
     box-sizing: border-box;
 }
+/* Header styles for Title page */
+header {
+    width: 100%;
+    text-align: center; /* Center the title */
+    background-color: #444; /* Background color for the header */
+    color: #fff; /* White text color for contrast */
+    margin-bottom: 2rem; /* Space below the header */
+    padding: 1rem; /* Padding for spacing */
+}
+header h1 {
+    font-weight: bold; /* Make the title bold */
+    font-size: 100px;  /* Increase font size for the title */
+    font-family: 'Kalnia Glaze', sans-serif; /* Different font used foe the Header of the page */
+}
 /* Body styles for overall page layout and typography */
 body {
     font-family: 'Honk', sans-serif;
@@ -15,4 +29,16 @@ body {
     flex-direction: column;
     align-items: center;
     padding: 1rem;
+}
+/* Navigation bar styles */
+nav {
+    background: #444; /* Dark background for contrast */
+    color: #fff; /* White text for readability */
+    padding: 1rem; /* Padding for spacing */
+    width: 100%; /* For full width */
+    text-align: center; /* Center text alignment */
+    display: flex; /* Flexbox for layout */
+    justify-content: space-between; /* Space between icon and links */
+    align-items: center; /* Center align items */
+
 }
