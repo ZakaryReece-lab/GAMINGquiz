@@ -103,3 +103,11 @@ input, textarea, button {
     width: 100%;  /* Full width */
     max-width: 600px;  /* Maximum width for readability */
 }
+/* Button specific styles */
+button {
+    background: #ff6347;  /* Background color for buttons */
+    color: #fff; /* White text */
+    border: none; /* No border */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background 0.3s; /* Smooth background transition on hover */
+}
