@@ -114,6 +114,15 @@ button {
 button:hover {
     background: #ff4500;  /* Darker background on hover */
 }
+/* Additional styles for the contact form and feedback form */
+#contact {
+    font-size: 30px;
+}
+#feedback {
+    font-size: 30px;
+
+}
+    
 /* Footer specific styles */
 footer {
     background: #444;  /* Dark background */
