@@ -69,3 +69,14 @@ nav ul li a {
 nav ul li a:hover {
     color: #ff6347;  /* Change color on hover for interactivity */
 }
+
+/* Section styles for main content areas */
+section {
+    background: #fff;  /* White background for contrast */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  /* Subtle shadow for depth */
+    padding: 2rem;  /* Padding for spacing */
+    margin: 2rem 0;  /* Margin for spacing between sections */
+    width: 100%;  /* Full width */
+    max-width: 800px;  /* Maximum width for readability */
+    border-radius: 8px;  /* Rounded corners for a smooth look */
+}
