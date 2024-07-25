@@ -150,3 +150,33 @@ function nextQuestion() {
         alert('Please select an option before proceeding.');
     }
 }
+// Function to show results
+function showResults() {
+    let score = 0;
+    let resultsHTML = '<h2>Quiz Results</h2><ul>';
+    
+// Loop through the questions and check the user's answers
+for (let i = 0; i < quizData.length; i++) {
+    const correctAnswer = quizData[i].answer;
+    const userAnswer = userAnswers[i];
+    
+    if (userAnswer === correctAnswer) {
+        score++;
+        resultsHTML += `<li>Question ${i + 1}: Correct</li>`;
+    } else {
+        resultsHTML += `<li>Question ${i + 1}: Incorrect (Correct answer: ${correctAnswer})</li>`;
+    }
+}
+}
+// Function to handle feedback form submission
+function handleFeedbackSubmission(event) {
+    // Prevent the default form submission
+    event.preventDefault();
+    // Get the feedback text
+    const feedback = document.getElementById('feedback-text').value;
+    if (feedback.length < 10) {
+        alert('Feedback is too short. Please provide more details.');
+    } else {
+        alert('Thank you for your feedback: ' + feedback);
+    }
+}
