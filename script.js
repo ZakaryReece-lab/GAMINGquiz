@@ -1,5 +1,6 @@
 // Array to store quiz questions and answers
-const quizData = [{
+const quizData = [
+    {
         question: "What is the highest-grossing video game franchise to date?",
         options: ["Super Mario", "Pokémon", "Call of Duty", "FIFA"],
         answer: "Pokémon"
@@ -100,74 +101,112 @@ const quizData = [{
         answer: "Stardew Valley"
     }
 ];
+
 // Track the current question index
 let currentQuestionIndex = 0;
 
 // Store user answers
 const userAnswers = [];
 
+// Store username
+let username = "";
+
 // Function to initialize the quiz
 function initializeQuiz() {
     // Display the first question
     displayQuestion(currentQuestionIndex);
+    // Hide the reset button initially
+    document.getElementById('reset-quiz').style.display = 'none';
+    document.getElementById('restart-quiz').style.display = 'none';
 }
 
 // Function to display a question
 function displayQuestion(index) {
-// Get the question container element
-    const questionContainer = document.querySelector('.question-container')
-// Get the current question data
+    // Get the question container element
+    const questionContainer = document.querySelector('.question-container');
+    // Get the current question data
     const questionData = quizData[index];
-
-// Inject the question and options into the container
+    
+    // Inject the question and options into the container
     questionContainer.innerHTML = `
-  <p>${index + 1}. ${questionData.question}</p>
-  ${questionData.options.map((option, i) => `
-      <label>
-          <input type="radio" name="question${index}" value="${option}"> ${option}
-      </label>
-  `).join('')}
-`;
+        <p>${index + 1}. ${questionData.question}</p>
+        ${questionData.options.map((option, i) => `
+            <label class="option-label">
+                <input type="radio" name="question${index}" value="${option}"> ${option}
+            </label>
+        `).join('')}
+    `;
 }
+
 // Function to handle next question
 function nextQuestion() {
-// Get the selected option for the current question
+    if (currentQuestionIndex === 0) {
+        username = document.getElementById('username').value;
+        if (username.trim() === "") {
+            alert('Please enter your username.');
+            return;
+        }
+    }
+
+    // Get the selected option for the current question
     const selectedOption = document.querySelector(`input[name="question${currentQuestionIndex}"]:checked`);
     if (selectedOption) {
-// Store the user's answer
+        // Store the user's answer
         userAnswers[currentQuestionIndex] = selectedOption.value;
-// Move to the next question
+        // Move to the next question
         currentQuestionIndex++;
         if (currentQuestionIndex < quizData.length) {
-// Display the next question
+            // Display the next question
             displayQuestion(currentQuestionIndex);
         } else {
-// Show the results if it was the last question
+            // Show the results if it was the last question
             showResults();
         }
     } else {
-// Alert the user if no option is selected
+        // Alert the user if no option is selected
         alert('Please select an option before proceeding.');
     }
 }
+
 // Function to show results
 function showResults() {
     let score = 0;
-    let resultsHTML = '<h2>Quiz Results</h2><ul>';
+    let resultsHTML = `<h2>Quiz Results for ${username}</h2><ul>`;
     
-// Loop through the questions and check the user's answers
-for (let i = 0; i < quizData.length; i++) {
-    const correctAnswer = quizData[i].answer;
-    const userAnswer = userAnswers[i];
-    
-    if (userAnswer === correctAnswer) {
-        score++;
-        resultsHTML += `<li>Question ${i + 1}: Correct</li>`;
-    } else {
-        resultsHTML += `<li>Question ${i + 1}: Incorrect (Correct answer: ${correctAnswer})</li>`;
+    // Loop through the questions and check the user's answers
+    for (let i = 0; i < quizData.length; i++) {
+        const correctAnswer = quizData[i].answer;
+        const userAnswer = userAnswers[i];
+        
+        if (userAnswer === correctAnswer) {
+            score++;
+            resultsHTML += `<li>Question ${i + 1}: Correct</li>`;
+        } else {
+            resultsHTML += `<li>Question ${i + 1}: Incorrect (Correct answer: ${correctAnswer})</li>`;
+        }
     }
+    
+    resultsHTML += `</ul><p>Your score is ${score}/${quizData.length}</p>`;
+    document.getElementById('quiz').innerHTML = resultsHTML;
+    document.getElementById('reset-quiz').style.display = 'block'; // Show the reset button
+    document.getElementById('restart-quiz').style.display = 'block'; // Show the restart button
 }
+
+// Function to reset the quiz
+function resetQuiz() {
+    currentQuestionIndex = 0;
+    userAnswers.length = 0; // Clear the user's answers
+    document.getElementById('username').value = ""; // Clear the username input
+    initializeQuiz(); // Re-initialize the quiz
 }
+
+// Function to restart the quiz
+function restartQuiz() {
+    currentQuestionIndex = 0;
+    userAnswers.length = 0; // Clear the user's answers
+    initializeQuiz(); // Re-initialize the quiz
+}
+
 // Function to handle feedback form submission
 function handleFeedbackSubmission(event) {
     // Prevent the default form submission
@@ -180,11 +219,12 @@ function handleFeedbackSubmission(event) {
         alert('Thank you for your feedback: ' + feedback);
     }
 }
+
 // Function to handle contact form submission
 function handleContactFormSubmission(event) {
-// Prevent the default form submission
+    // Prevent the default form submission
     event.preventDefault();
-// Get the form data
+    // Get the form data
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
     const message = document.getElementById('message').value;
@@ -205,29 +245,35 @@ function handleContactFormSubmission(event) {
     
     alert(`Thank you for contacting us, ${name}. We will respond to ${email} soon!`);
 }
+
 // Email validation function
 function validateEmail(email) {
-// Regular expression to validate email format
+    // Regular expression to validate email format
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-// Test the email string against the regular expression and return the result
+    // Test the email string against the regular expression and return the result
     return re.test(String(email).toLowerCase());
 }
+
 // Function to toggle navigation menu
 function toggleNav() {
     const navLinks = document.querySelector('nav ul');
-    // Toggle display property between 'none' and 'flex'
-    navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+    // Toggle the active class for the nav menu
+    navLinks.classList.toggle('active');
 }
 
 // Event listener for navigation icon click
-document.querySelector('.nav-icon').addEventListener('click', toggleNav);
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelector('.nav-icon').addEventListener('click', toggleNav);
 
-// Event listeners for forms
-document.getElementById('feedback-form').addEventListener('submit', handleFeedbackSubmission);
-document.getElementById('contact-form').addEventListener('submit', handleContactFormSubmission);
+    // Event listeners for forms
+    document.getElementById('feedback-form').addEventListener('submit', handleFeedbackSubmission);
+    document.getElementById('contact-form').addEventListener('submit', handleContactFormSubmission);
 
-// Initialize the quiz when the page loads
-initializeQuiz();
+    // Initialize the quiz when the page loads
+    initializeQuiz();
 
-// Button event listener for next question
-document.getElementById('next-question').addEventListener('click', nextQuestion);
+    // Button event listeners for next question, reset quiz, and restart quiz
+    document.getElementById('next-question').addEventListener('click', nextQuestion);
+    document.getElementById('reset-quiz').addEventListener('click', resetQuiz);
+    document.getElementById('restart-quiz').addEventListener('click', restartQuiz);
+});
