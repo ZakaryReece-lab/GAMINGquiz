@@ -23,7 +23,7 @@ header h1 {
 /* Body styles for overall page layout and typography */
 body {
     font-family: 'Honk', sans-serif;
-    background: #fafafa;
+    background: #444
     color: #333;
     display: flex;
     flex-direction: column;
@@ -86,6 +86,7 @@ section {
     display: flex; /* Flexbox layout */
     flex-direction: column; /* Vertical alignment */
     align-items: center; /* Center align items */
+    font-size: 30px;
 }
 /* Username section specific styles */
 #username-section {
@@ -93,6 +94,7 @@ section {
     display: flex;  /* Flexbox layout */
     flex-direction: column;  /* Vertical alignment */
     align-items: center;  /* Center align items */
+    font-size: 20px;
 }
 /* Styles for inputs, textareas, and buttons */
 input, textarea, button {

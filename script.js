@@ -1,6 +1,5 @@
 // Array to store quiz questions and answers
-const quizData = [ 
-    {
+const quizData = [{
         question: "What is the highest-grossing video game franchise to date?",
         options: ["Super Mario", "Pokémon", "Call of Duty", "FIFA"],
         answer: "Pokémon"
@@ -103,10 +102,52 @@ const quizData = [
 ];
 // Track the current question index
 let currentQuestionIndex = 0;
+
 // Store user answers
 const userAnswers = [];
+
 // Function to initialize the quiz
 function initializeQuiz() {
     // Display the first question
     displayQuestion(currentQuestionIndex);
+}
+
+// Function to display a question
+function displayQuestion(index) {
+    // Get the question container element
+    const questionContainer = document.querySelector('.question-container')
+    // Get the current question data
+    const questionData = quizData[index];
+
+    // Inject the question and options into the container
+    // Inject the question and options into the container
+    questionContainer.innerHTML = `
+  <p>${index + 1}. ${questionData.question}</p>
+  ${questionData.options.map((option, i) => `
+      <label>
+          <input type="radio" name="question${index}" value="${option}"> ${option}
+      </label>
+  `).join('')}
+`;
+}
+// Function to handle next question
+function nextQuestion() {
+    // Get the selected option for the current question
+    const selectedOption = document.querySelector(`input[name="question${currentQuestionIndex}"]:checked`);
+    if (selectedOption) {
+        // Store the user's answer
+        userAnswers[currentQuestionIndex] = selectedOption.value;
+        // Move to the next question
+        currentQuestionIndex++;
+        if (currentQuestionIndex < quizData.length) {
+        // Display the next question
+            displayQuestion(currentQuestionIndex);
+        } else {
+        // Show the results if it was the last question
+            showResults();
+        }
+    } else {
+        // Alert the user if no option is selected
+        alert('Please select an option before proceeding.');
+    }
 }
