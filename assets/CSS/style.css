@@ -111,3 +111,35 @@ button {
     cursor: pointer; /* Pointer cursor on hover */
     transition: background 0.3s; /* Smooth background transition on hover */
 }
+button:hover {
+    background: #ff4500;  /* Darker background on hover */
+}
+/* Footer specific styles */
+footer {
+    background: #444;  /* Dark background */
+    color: #fff;  /* White text */
+    text-align: center;  /* Center text */
+    font-size: 30px;
+    padding: 1rem;  /* Padding for comfort */
+    width: 100%;  /* Full width */
+    position: fixed;  /* Fixed position at the bottom */
+    bottom: 0;  /* Align to bottom */
+    display: flex;  /* Flexbox layout */
+    justify-content: center;  /* Center align items */
+}
+footer ul {
+    list-style-type: none; /* Remove default list styling */
+    display: flex; /*Flexbox for horizontal alignment */
+    justify-content: center; /* Center the items */
+}
+footer ul li {
+    margin: 0 1rem;  /* Margin between footer items */
+}
+footer ul li a {
+    color: #fff;  /* White text for links */
+    text-decoration: none;  /* Remove underline */
+    transition: color 0.3s;  /* Smooth color transition on hover */
+}
+footer ul li a:hover {
+    color: #ff6347;  /* Change color on hover for interactivity */
+}
