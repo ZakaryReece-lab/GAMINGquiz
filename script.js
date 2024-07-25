@@ -114,13 +114,12 @@ function initializeQuiz() {
 
 // Function to display a question
 function displayQuestion(index) {
-    // Get the question container element
+// Get the question container element
     const questionContainer = document.querySelector('.question-container')
-    // Get the current question data
+// Get the current question data
     const questionData = quizData[index];
 
-    // Inject the question and options into the container
-    // Inject the question and options into the container
+// Inject the question and options into the container
     questionContainer.innerHTML = `
   <p>${index + 1}. ${questionData.question}</p>
   ${questionData.options.map((option, i) => `
@@ -132,22 +131,22 @@ function displayQuestion(index) {
 }
 // Function to handle next question
 function nextQuestion() {
-    // Get the selected option for the current question
+// Get the selected option for the current question
     const selectedOption = document.querySelector(`input[name="question${currentQuestionIndex}"]:checked`);
     if (selectedOption) {
-        // Store the user's answer
+// Store the user's answer
         userAnswers[currentQuestionIndex] = selectedOption.value;
-        // Move to the next question
+// Move to the next question
         currentQuestionIndex++;
         if (currentQuestionIndex < quizData.length) {
-        // Display the next question
+// Display the next question
             displayQuestion(currentQuestionIndex);
         } else {
-        // Show the results if it was the last question
+// Show the results if it was the last question
             showResults();
         }
     } else {
-        // Alert the user if no option is selected
+// Alert the user if no option is selected
         alert('Please select an option before proceeding.');
     }
 }
