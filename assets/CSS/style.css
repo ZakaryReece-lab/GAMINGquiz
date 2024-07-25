@@ -40,5 +40,32 @@ nav {
     display: flex; /* Flexbox for layout */
     justify-content: space-between; /* Space between icon and links */
     align-items: center; /* Center align items */
+    font-size: 30px;
 
+}
+/* Icon styles for mobile navigation */
+.nav-icon {
+    display: none;  /* Hide by default */
+}
+.nav-icon i {
+    font-size: 1rem; /* Increase icon size */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+/* Styles for navigation links */
+nav ul {
+    list-style-type: none; /* Remove default list styling */
+    display: flex; /* Flexbox for horizontal alignment */
+    justify-content: center; /* Center the items */
+    flex-wrap: wrap; /* Wrap items on smaller screens */
+}
+nav ul li {
+    margin: 0.5rem 1rem;  /* Margin between navigation items */
+}
+nav ul li a {
+    color: #fff; /* White text for links */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s; /* Smooth color transition on hover */
+}
+nav ul li a:hover {
+    color: #ff6347;  /* Change color on hover for interactivity */
 }
