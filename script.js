@@ -1,6 +1,5 @@
 // Array to store quiz questions and answers
-const quizData = [
-    {
+const quizData = [{
         question: "What is the highest-grossing video game franchise to date?",
         options: ["Super Mario", "Pokémon", "Call of Duty", "FIFA"],
         answer: "Pokémon"
@@ -126,7 +125,7 @@ function displayQuestion(index) {
     const questionContainer = document.querySelector('.question-container');
     // Get the current question data
     const questionData = quizData[index];
-    
+
     // Inject the question and options into the container
     questionContainer.innerHTML = `
         <p>${index + 1}. ${questionData.question}</p>
@@ -172,12 +171,12 @@ function nextQuestion() {
 function showResults() {
     let score = 0;
     let resultsHTML = `<h2>Quiz Results for ${username}</h2><ul>`;
-    
+
     // Loop through the questions and check the user's answers
     for (let i = 0; i < quizData.length; i++) {
         const correctAnswer = quizData[i].answer;
         const userAnswer = userAnswers[i];
-        
+
         if (userAnswer === correctAnswer) {
             score++;
             resultsHTML += `<li>Question ${i + 1}: Correct</li>`;
@@ -185,7 +184,7 @@ function showResults() {
             resultsHTML += `<li>Question ${i + 1}: Incorrect (Correct answer: ${correctAnswer})</li>`;
         }
     }
-    
+
     resultsHTML += `</ul><p>Your score is ${score}/${quizData.length}</p>`;
     document.getElementById('quiz').innerHTML = resultsHTML;
     document.getElementById('reset-quiz').style.display = 'block'; // Show the reset button
@@ -242,7 +241,7 @@ function handleContactFormSubmission(event) {
         alert('Please provide a more detailed message.');
         return;
     }
-    
+
     alert(`Thank you for contacting us, ${name}. We will respond to ${email} soon!`);
 }
 
@@ -262,7 +261,7 @@ function toggleNav() {
 }
 
 // Event listener for navigation icon click
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     document.querySelector('.nav-icon').addEventListener('click', toggleNav);
 
     // Event listeners for forms

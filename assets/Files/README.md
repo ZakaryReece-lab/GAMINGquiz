@@ -1,131 +1,122 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
-Welcome Zakary Reece,
+# Ultimate Gaming Challenge
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+## Introduction
 
-You can safely delete this README.md file or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **June 18, 2024**
+Welcome to the **Ultimate Gaming Challenge**, an innovative and interactive web-based quiz designed to test and enhance your knowledge of video games, gaming history, and popular game characters. This project aims to provide a comprehensive and engaging experience for both casual gamers and dedicated enthusiasts. Utilizing modern web technologies, this application ensures a seamless, responsive, and user-friendly interface that adapts to various devices. The Ultimate Gaming Challenge not only offers an entertaining way to gauge your gaming expertise but also serves as an educational tool to broaden your understanding of the gaming world.
+### HTML Explanation
 
-## Gitpod Reminders
+The HTML file structures the web page content and defines the layout and sections.
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+#### Head Section
 
-`python3 -m http.server`
+The doctype declaration at the top defines the document as an HTML5 document. The `<html>` element is the root of the HTML document, with a `lang` attribute specifying the language as English. Inside the `<head>` element, several meta tags provide information about the document. These include the character encoding set to UTF-8, ensuring proper text display, and the viewport settings, which make the webpage responsive across different devices. The meta description provides a summary of the webpage's content for search engines, while the meta keywords help with search engine optimization. The author meta tag identifies the creator of the webpage.
 
-A blue button should appear to click: _Make Public_,
+A favicon link specifies a small icon to be displayed in the browser tab. The link to the external CSS file includes styles for the webpage. Additionally, a link to Font Awesome allows the use of various icons throughout the page.
 
-Another blue button should appear to click: _Open Browser_.
+#### Body Section
 
-To run a backend Python file, type `python3 app.py` if your Python file is named `app.py`, of course.
+The body contains all the visible content on the webpage. The header section contains the main title of the quiz, styled to be prominent and centered. The navigation bar includes links to different sections of the page: Home, Quiz, Feedback, and Contact. It also contains a navigation icon for mobile users to toggle the menu. The home section welcomes users to the quiz and provides instructions on starting the quiz. The quiz section includes an input for entering a username, a container where quiz questions are dynamically injected via JavaScript, and buttons to navigate through the quiz, reset it, or restart it. The feedback section provides a form for users to submit feedback, including a text area for entering feedback and a submit button. The contact section includes a form for users to contact the developers, with inputs for the user's name, email, and message, along with a submit button. The footer contains social media links, allowing users to visit the project's social media pages.
 
-A blue button should appear to click: _Make Public_,
+### CSS Explanation
 
-Another blue button should appear to click: _Open Browser_.
+The CSS file styles the HTML elements, ensuring a consistent and visually appealing design.
 
-By Default, Gitpod gives you superuser security privileges. Therefore, you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+#### Importing Fonts
 
-To log into the Heroku toolbelt CLI:
+Google Fonts are imported to use custom fonts for styling the text. This enhances the visual appeal and readability of the webpage by using fonts that are specifically designed for digital screens and offer a variety of styles.
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+#### Basic Reset
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you, so do not share it. If you accidentally make it public, you can create a new one with _Regenerate API Key_.
+A basic CSS reset is applied to remove default padding and margin from all elements, and to set the box-sizing property to border-box. This ensures that padding and borders are included in the element's total width and height, making layout calculations more predictable and consistent across different browsers.
 
-### Connecting your Mongo database
+#### Header Styles
 
-- **Connect to Mongo CLI on a IDE**
-- navigate to your MongoDB Clusters Sandbox
-- click **"Connect"** button
-- select **"Connect with the MongoDB shell"**
-- select **"I have the mongo shell installed"**
-- choose **mongosh (2.0 or later)** for : **"Select your mongo shell version"**
-- choose option: **"Run your connection string in your command line"**
-- in the terminal, paste the copied code `mongo "mongodb+srv://<CLUSTER-NAME>.mongodb.net/<DBname>" --apiVersion 1 --username <USERNAME>`
-  - replace all `<angle-bracket>` keys with your own data
-- enter password _(will not echo **\*\*\*\*** on screen)_
+The header section is styled to be the full width of the page and center-align the text. A dark background color is set to create contrast with the white text, making the title stand out. Padding and margin are added to ensure there is space around the header, and the title inside the header is made bold with a responsive font size and uppercase text transformation for emphasis.
 
-------
+#### Body Styles
 
-## Release History
+The body element is styled with a custom font family, ensuring all text on the page uses the same font for a cohesive look. A background image is applied to the entire page, set to cover the entire background without repeating, ensuring a visually appealing backdrop. The color of the text is set to white for readability against the dark background. Flexbox is used for layout, centering content horizontally and vertically and ensuring responsiveness by adjusting the layout based on the screen size. Padding is added to create a border effect, giving the content some breathing room.
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+#### Navigation Bar Styles
 
-**June 18, 2024,** Add Mongo back into template
+The navigation bar is styled with a dark background and white text to match the header. Flexbox is used to layout the navigation links, centering them horizontally and ensuring they are evenly spaced. A mobile-friendly navigation icon is initially hidden but displayed on smaller screens to toggle the menu. Navigation links are styled with smooth color transitions on hover, providing visual feedback to users when they interact with the links.
 
-**June 14, 2024,** Temporarily remove Mongo until the key issue is resolved
+#### Section Styles
 
-**May 28 2024:** Fix Mongo and Links installs
+Each section (home, quiz, feedback, contact) is styled with a semi-transparent black background to create contrast with the text and ensure readability. Padding is added to create space around the content, and rounded corners are used for a smooth, modern look. Background images are applied to each section, set to cover the entire section without repeating, ensuring a visually appealing background. Text alignment is set to the left for readability.
 
-**April 26 2024:** Update node version to 16
+#### Form Styles
 
-**September 20 2023:** Update Python version to 3.9.17.
+Forms in the feedback and contact sections are styled to align items flexibly, making them easy to use on different screen sizes. Padding and borders are added to inputs, text areas, and buttons to make them stand out and be easy to interact with. Buttons are styled to change color on hover, providing visual feedback and enhancing the user experience. Consistent spacing and width are maintained for a clean, organized look.
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+#### Responsive Design
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+Media queries are used to adjust styles for different screen sizes, ensuring the layout remains user-friendly on all devices. For mobile devices, the navigation icon is displayed, and the navigation links are hidden by default, stacking vertically when displayed. Padding and margins are adjusted for smaller screens, ensuring the layout remains compact and easy to navigate. For larger screens, padding, margins, and font sizes are increased to make use of the additional space and enhance readability.
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+### JavaScript Explanation
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+The JavaScript file adds interactivity to the quiz, dynamically updating content and handling user input.
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+#### Quiz Data
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+The quiz data is stored in an array of objects, where each object represents a quiz question. Each object contains a question string, an array of options, and the correct answer. This structure allows easy access and manipulation of the quiz data.
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+#### Variables
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+Several variables are used to manage the state of the quiz:
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+- `currentQuestionIndex` keeps track of the current question being displayed.
+- `userAnswers` is an array that stores the answers provided by the user.
+- `username` stores the username entered by the user.
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+#### Functions
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+##### `initializeQuiz`
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+This function initializes the quiz by displaying the first question and hiding the reset and restart buttons initially. It sets up the initial state of the quiz.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+##### `displayQuestion`
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+This function takes an index as an argument and displays the corresponding question and its options. It selects the question container element from the HTML and injects the question and options into it. Each option is displayed as a radio button, allowing the user to select one answer.
 
-------
+##### `nextQuestion`
 
-## FAQ about the uptime script
+This function handles the transition to the next question. It first validates the username input to ensure it is not empty. If the username is valid, it retrieves the selected option for the current question and stores it in the `userAnswers` array. It then increments the `currentQuestionIndex` to move to the next question. If the current question is the last one, it calls the `showResults` function to display the results.
 
-**Why have you added this script?**
+##### `showResults`
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+This function calculates the user's score by comparing their answers with the correct answers. It generates an HTML string displaying the user's score and which questions were answered correctly or incorrectly. The results are then displayed in the quiz section, and the reset and restart buttons are shown.
 
-**How will this affect me?**
+##### `resetQuiz`
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+This function resets all quiz data, including the `currentQuestionIndex` and `userAnswers` array. It also clears the username input and reinitializes the quiz.
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+##### `restartQuiz`
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+Similar to `resetQuiz`, this function resets the quiz data but does not clear the username. It reinitializes the quiz from the first question.
 
-**So….?**
+##### `handleFeedbackSubmission`
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+This function handles the submission of the feedback form. It prevents the default form submission behavior, retrieves the feedback text, and validates its length. If the feedback is sufficiently detailed, it displays a thank you message.
 
-**Can I opt out?**
+##### `handleContactFormSubmission`
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+This function handles the submission of the contact form. It prevents the default form submission behavior, retrieves the name, email, and message from the form, and validates their lengths and format. If the inputs are valid, it displays a thank you message.
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+##### `validateEmail`
 
-**Anything more?**
+This function uses a regular expression to validate the format of an email address. It checks if the email string matches the pattern and returns a boolean indicating whether the email is valid.
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+##### `toggleNav`
 
----
+This function toggles the navigation menu for mobile view. It selects the navigation links element and toggles the `active` class, which controls the visibility of the menu.
 
-Happy coding!
+#### Event Listeners
+
+Event listeners are added to handle various interactions on the page:
+
+- The page load event initializes the quiz.
+- Form submission events for the feedback and contact forms trigger their respective handling functions.
+- Button click events for navigating to the next question, resetting the quiz, and restarting the quiz trigger their respective functions.
+- The navigation icon click event triggers the `toggleNav` function to show or hide the navigation menu on mobile devices.
