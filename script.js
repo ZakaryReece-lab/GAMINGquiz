@@ -180,3 +180,12 @@ function handleFeedbackSubmission(event) {
         alert('Thank you for your feedback: ' + feedback);
     }
 }
+// Function to handle contact form submission
+function handleContactFormSubmission(event) {
+// Prevent the default form submission
+    event.preventDefault();
+// Get the form data
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+}
