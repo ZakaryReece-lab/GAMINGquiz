@@ -143,3 +143,78 @@ footer ul li a {
 footer ul li a:hover {
     color: #ff6347;  /* Change color on hover for interactivity */
 }
+
+/* Media Queries for Responsive Design */
+
+/* Mobile devices (max-width: 600px) */
+@media (max-width: 600px) {
+    .nav-icon {
+        display: block;  /* Show icon on mobile devices */
+    }
+
+    nav ul {
+        display: none;  /* Hide navigation links */
+    }
+
+    /* Additional styles for expanded menu if necessary */
+}
+
+/* Tablets and larger devices (min-width: 600px) */
+@media (min-width: 600px) {
+    body {
+        padding: 2rem;
+    }
+    
+    nav ul li {
+        margin: 0 1.5rem;
+    }
+    
+    section {
+        padding: 2.5rem;
+        margin: 2.5rem 0;
+    }
+
+    input, textarea, button {
+        max-width: 700px;
+    }
+}
+
+/* Laptops and larger devices (min-width: 992px) */
+@media (min-width: 992px) {
+    body {
+        padding: 3rem;
+    }
+    
+    nav ul li {
+        margin: 0 2rem;
+    }
+    
+    section {
+        padding: 3rem;
+        margin: 3rem 0;
+    }
+
+    input, textarea, button {
+        max-width: 800px;
+    }
+}
+
+/* Desktops and larger devices (min-width: 1200px) */
+@media (min-width: 1200px) {
+    body {
+        padding: 4rem;
+    }
+    
+    nav ul li {
+        margin: 0 2.5rem;
+    }
+    
+    section {
+        padding: 3.5rem;
+        margin: 3.5rem 0;
+    }
+
+    input, textarea, button {
+        max-width: 900px;
+    }
+}
