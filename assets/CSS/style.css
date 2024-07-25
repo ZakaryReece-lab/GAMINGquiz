@@ -94,3 +94,12 @@ section {
     flex-direction: column;  /* Vertical alignment */
     align-items: center;  /* Center align items */
 }
+/* Styles for inputs, textareas, and buttons */
+input, textarea, button {
+    padding: 0.5rem;  /* Padding for comfort */
+    border: 1px solid #ddd;  /* Light border */
+    border-radius: 4px;  /* Rounded corners */
+    margin: 0.5rem 0;  /* Margin for spacing */
+    width: 100%;  /* Full width */
+    max-width: 600px;  /* Maximum width for readability */
+}
