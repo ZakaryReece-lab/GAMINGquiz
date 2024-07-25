@@ -101,3 +101,12 @@ const quizData = [
         answer: "Stardew Valley"
     }
 ];
+// Track the current question index
+let currentQuestionIndex = 0;
+// Store user answers
+const userAnswers = [];
+// Function to initialize the quiz
+function initializeQuiz() {
+    // Display the first question
+    displayQuestion(currentQuestionIndex);
+}
