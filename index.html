@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- This meta description tag provides a brief summary of the page's content. This is used by search engines in their search results. -->
-    <meta name="description" content="oin our exciting gaming quiz to test your knowledge on various video games, gaming history, and popular game characters. Ideal for casual gamers and hardcore enthusiasts.">
+    <meta name="description"
+        content="oin our exciting gaming quiz to test your knowledge on various video games, gaming history, and popular game characters. Ideal for casual gamers and hardcore enthusiasts.">
     <!-- This meta keywords tag lists important keywords related to the page's content. Although not as heavily used by search engines today, it can still be useful for some purposes. -->
-    <meta name="keywords" content="gaming quiz, video game quiz, gaming test, video game test, gaming challenges, game knowledge, gamer quiz, video game trivia, gaming skills">
+    <meta name="keywords"
+        content="gaming quiz, video game quiz, gaming test, video game test, gaming challenges, game knowledge, gamer quiz, video game trivia, gaming skills">
     <!-- This meta author tag specifies the author of the page. This can be used for informational purposes and to give credit to the content creators. -->
     <meta name="author" content="Zakary Reece, Gaming Quiz Website Creator">
     <!-- Link to the Favicon -->
@@ -18,25 +21,36 @@
     <!-- Title -->
     <title>Ultimate Gaming Challenge</title>
 </head>
+
 <body>
     <!-- Header Section -->
     <header>
         <h1>Ultimate Gaming Quiz</h1>
     </header>
     <!-- Navigation Bar -->
-     <nav>
+    <nav>
         <ul>
             <li><a href="quiz">Quiz</a></li>
             <li><a href="feedback">Feedback</a></li>
             <li><a href="contact">Contact</a></li>
-    
+
         </ul>
-     </nav>
-     <!-- Quiz Section -->
-      <section id="quiz">
-        
-      </section>
+    </nav>
+    <!-- Quiz Section -->
+    <section id="quiz">
+        <h1>Gaming Quiz!</h1>
+        <!-- Username Input Section -->
+        <div id="username-section">
+            <label for="username">Enter your username:</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <!-- Container where questions will be dynamically added here through JavaScript -->
+        <div class="question-container">
+            <button id="next-question">Next Question</button>
+        </div>
+    </section>
 </body>
 <!-- Link to the JavaScript file -->
 <script src="script.js"></script>
+
 </html>
