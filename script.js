@@ -188,4 +188,46 @@ function handleContactFormSubmission(event) {
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
     const message = document.getElementById('message').value;
+
+    // Validate the form data
+    if (name.length < 2) {
+        alert('Please enter a valid name.');
+        return;
+    }
+    if (!validateEmail(email)) {
+        alert('Please enter a valid email address.');
+        return;
+    }
+    if (message.length < 10) {
+        alert('Please provide a more detailed message.');
+        return;
+    }
+    
+    alert(`Thank you for contacting us, ${name}. We will respond to ${email} soon!`);
 }
+// Email validation function
+function validateEmail(email) {
+// Regular expression to validate email format
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+// Test the email string against the regular expression and return the result
+    return re.test(String(email).toLowerCase());
+}
+// Function to toggle navigation menu
+function toggleNav() {
+    const navLinks = document.querySelector('nav ul');
+    // Toggle display property between 'none' and 'flex'
+    navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+}
+
+// Event listener for navigation icon click
+document.querySelector('.nav-icon').addEventListener('click', toggleNav);
+
+// Event listeners for forms
+document.getElementById('feedback-form').addEventListener('submit', handleFeedbackSubmission);
+document.getElementById('contact-form').addEventListener('submit', handleContactFormSubmission);
+
+// Initialize the quiz when the page loads
+initializeQuiz();
+
+// Button event listener for next question
+document.getElementById('next-question').addEventListener('click', nextQuestion);
