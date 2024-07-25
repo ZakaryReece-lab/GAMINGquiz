@@ -81,3 +81,16 @@ section {
     border-radius: 8px;  /* Rounded corners for a smooth look */
 }
 
+/* Quiz section specific styles */
+#quiz {
+    display: flex; /* Flexbox layout */
+    flex-direction: column; /* Vertical alignment */
+    align-items: center; /* Center align items */
+}
+/* Username section specific styles */
+#username-section {
+    margin-bottom: 1rem;
+    display: flex;  /* Flexbox layout */
+    flex-direction: column;  /* Vertical alignment */
+    align-items: center;  /* Center align items */
+}
