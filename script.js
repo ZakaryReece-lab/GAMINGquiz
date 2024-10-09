@@ -47,7 +47,7 @@ const quizData = [{
     {
         question: "What is the primary material used to craft weapons and armor in Minecraft?",
         options: ["Stone", "Iron", "Wood", "Diamond"],
-        answer: "Diamond"
+        answer: "Iron"
     },
     {
         question: "Who is the main antagonist in the Halo series?",
