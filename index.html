@@ -1,109 +1,316 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- 
+The DOCTYPE declaration ensures that the document is rendered in standards mode.
+The lang attribute specifies the language of the document, which helps with accessibility and search engines.
+-->
 
 <head>
     <meta charset="UTF-8">
+    <!-- 
+    This defines the character encoding for the HTML document as UTF-8, ensuring that the text is displayed correctly, including special characters.
+    -->
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Brief summary of the page's content for search engines -->
+    <!-- 
+    This tag makes the webpage responsive by adjusting the layout based on the width of the device's viewport.
+    It ensures the site is mobile-friendly.
+    -->
+
     <meta name="description"
         content="Join our exciting gaming quiz to test your knowledge on various video games, gaming history, and popular game characters. Ideal for casual gamers and hardcore enthusiasts.">
-    <!-- Important keywords related to the page's content -->
+    <!-- 
+    This meta tag provides a brief description of the page content, which helps search engines and social media understand the purpose of the page. It is essential for SEO.
+    -->
+
     <meta name="keywords"
         content="gaming quiz, video game quiz, gaming test, video game test, gaming challenges, game knowledge, gamer quiz, video game trivia, gaming skills">
-    <!-- Specifies the author of the page -->
+    <!-- 
+    This tag specifies important keywords relevant to the content of the page, aiding in search engine optimization (SEO).
+    -->
+
     <meta name="author" content="Zakary Reece, Gaming Quiz Website Creator">
-    <!-- Link to the Favicon -->
+    <!-- 
+    Specifies the author of the webpage. This information is helpful for SEO and provides proper attribution.
+    -->
+
     <link rel="icon" href="assets/icons/buttons.png">
-    <!-- Link to the CSS file -->
+    <!-- 
+    Provides a link to the favicon (small icon), which appears in the browser tab and helps with brand recognition.
+    -->
+
     <link rel="stylesheet" href="assets/css/style.css">
-    <!-- Title -->
+    <!-- 
+    Links the external CSS file for styling the webpage. Keeping CSS separate from HTML ensures better organization and maintainability.
+    -->
+
     <title>Ultimate Gaming Challenge</title>
-    <!-- Font Awesome for icons -->
+    <!-- 
+    Defines the title of the webpage. This title is displayed in the browser tab and is used by search engines to display the page in search results.
+    -->
+
     <script src="https://kit.fontawesome.com/950acdf4f6.js" crossorigin="anonymous"></script>
+    <!-- 
+    Includes the Font Awesome library for using icons on the webpage (e.g., social media icons). The crossorigin attribute ensures that the font is loaded properly from external servers.
+    -->
 </head>
 
 <body>
+    <!-- 
+    The body element contains the content of the webpage that users will interact with. 
+    -->
+
     <!-- Header Section -->
     <header>
+        <!-- 
+        The header contains introductory content or navigational links. In this case, it displays the main title of the website.
+        -->
         <h1>Ultimate Gaming Quiz</h1>
+        <!-- 
+        The main title of the webpage, represented by the <h1> tag, which is typically the most important heading and helps with SEO.
+        -->
     </header>
 
     <!-- Navigation Bar -->
     <nav>
+        <!-- 
+        The <nav> element defines a set of navigation links, helping users to move between sections of the page.
+        -->
+
         <div class="nav-icon">
             <i class="fas fa-bars" aria-hidden="true"></i>
-            <span class="sr-only">Menu</span> <!-- Screen reader text -->
+            <!-- 
+            This is the "hamburger menu" icon for mobile navigation, using a Font Awesome icon. 
+            The aria-hidden attribute hides the icon from screen readers, since the <span> below is used for accessibility.
+            -->
+            <span class="sr-only">Menu</span> 
+            <!-- 
+            The <span> with the sr-only class provides an accessible label for the icon, which is visible only to screen readers. This is important for users with visual impairments.
+            -->
         </div>
+
         <ul>
+            <!-- 
+            The <ul> element creates an unordered list of navigation links. Lists help with organization and are semantically correct for navigation.
+            -->
             <li><a href="#home">Home</a></li>
+            <!-- 
+            The <li> element defines each list item. The <a> tag creates a clickable link that scrolls to the "Home" section.
+            -->
+
             <li><a href="#quiz">Quiz</a></li>
+            <!-- 
+            This list item links to the "Quiz" section of the page.
+            -->
+
             <li><a href="#feedback">Feedback</a></li>
+            <!-- 
+            This list item links to the "Feedback" section of the page.
+            -->
+
             <li><a href="#contact">Contact</a></li>
+            <!-- 
+            This list item links to the "Contact" section of the page.
+            -->
         </ul>
     </nav>
 
     <!-- Home Section -->
     <section id="home" class="home-back-img">
-        <h1>Welcome to the Ultimate Gaming Quiz!</h1>
+        <!-- 
+        The <section> tag defines a section of content. In this case, the "Home" section of the webpage.
+        The id="home" allows the section to be targeted by internal links and CSS.
+        The class "home-back-img" is used to apply background image styles defined in the CSS.
+        -->
+        <h2>Welcome to the Ultimate Gaming Quiz!</h2>
+        <!-- 
+        The <h2> tag is used to represent a secondary heading. It introduces the content of the "Home" section.
+        -->
         <p>Click on the Quiz section to start testing your gaming knowledge.</p>
+        <!-- 
+        The <p> tag represents a paragraph of text. This paragraph provides instructions to users.
+        -->
     </section>
 
     <!-- Quiz Section -->
     <section id="quiz" class="quiz-back-img">
+        <!-- 
+        Another section for the quiz part of the page. The id="quiz" allows this section to be linked to, and the class "quiz-back-img" applies background styles.
+        -->
         <h2>Gaming Quiz!</h2>
+        <!-- 
+        A heading for the quiz section, letting users know this is where the quiz starts.
+        -->
+
         <!-- Username Input Section -->
         <div id="username-section">
+            <!-- 
+            A <div> element groups the label and input field for the username. It helps to organize form elements.
+            -->
             <label for="username">Enter your username:</label>
+            <!-- 
+            The <label> element associates the text with the input field, helping users understand what the input is for.
+            The for attribute connects the label to the input field by its id.
+            -->
             <input type="text" id="username" name="username" required>
+            <!-- 
+            The <input> element is a form control to collect user input. 
+            type="text" specifies a single-line text input. 
+            The required attribute means the user must fill in this field before submitting the form.
+            -->
         </div>
+
         <!-- Container where questions will be dynamically added here through JavaScript -->
         <div class="question-container"></div>
+        <!-- 
+        An empty <div> serves as a placeholder for dynamically generated quiz questions using JavaScript. 
+        The "question-container" class is used for styling and targeting with scripts.
+        -->
+
         <!-- Button to navigate to the next question -->
         <button id="next-question">Next Question</button>
+        <!-- 
+        A button element to go to the next question. The id="next-question" allows it to be referenced in JavaScript.
+        -->
+
         <!-- Button to reset the quiz -->
         <button id="reset-quiz" style="display:none;">Reset Quiz</button>
+        <!-- 
+        A button to reset the quiz. Initially hidden (display:none) and will be shown when necessary via JavaScript.
+        -->
+
         <!-- Button to restart the quiz -->
         <button id="restart-quiz" style="display:none;">Restart Quiz</button>
+        <!-- 
+        A button to restart the quiz. Like the reset button, it is hidden by default and will be shown via JavaScript.
+        -->
     </section>
 
     <!-- Feedback Form -->
     <section id="feedback" class="feedback-back-img">
+        <!-- 
+        A section for the feedback form. The id allows it to be linked from the navigation, and the class applies background image styles.
+        -->
         <h2>Feedback Form</h2>
+        <!-- 
+        The heading for the feedback form.
+        -->
+
         <form id="feedback-form" method="GET" action="https://formdump.codeinstitute.net">
+            <!-- 
+            A form element that allows users to submit feedback. 
+            method="GET" sends the form data as query parameters in the URL.
+            action specifies the endpoint where the form data will be sent.
+            -->
             <label for="feedback-text">Your Feedback:</label>
+            <!-- 
+            The label for the feedback textarea.
+            -->
+
             <textarea id="feedback-text" name="feedback"></textarea>
+            <!-- 
+            The <textarea> element allows users to enter multi-line feedback.
+            The name attribute is used when submitting the form data.
+            -->
+
             <button type="submit">Submit Feedback</button>
+            <!-- 
+            A submit button to send the form data.
+            -->
         </form>
     </section>
 
     <!-- Contact Us Section -->
     <section id="contact" class="contact-back-img">
+        <!-- 
+        A section for the contact form. The id="contact" allows the section to be linked from the navigation, and the class applies background image styles.
+        -->
         <h2>Contact Us!</h2>
+        <!-- 
+        The heading for the contact form.
+        -->
+
         <form id="contact-form">
+            <!-- 
+            A form for users to submit their contact information.
+            -->
+
             <label for="name">Name:</label>
+            <!-- 
+            The label for the "Name" input field.
+            -->
+
             <input type="text" name="name" id="name">
+            <!-- 
+            An input field to collect the user's name. 
+            type="text" specifies a single-line text input.
+            The name attribute is used when submitting form data.
+            -->
+
             <label for="email">Email:</label>
+            <!-- 
+            The label for the "Email" input field.
+            -->
+
             <input type="email" name="email" id="email">
+            <!-- 
+            An input field for the user's email address. 
+            type="email" ensures the input is validated as an email.
+            -->
+
             <label for="message">Message:</label>
+            <!-- 
+            The label for the "Message" textarea.
+            -->
+
             <textarea id="message" name="message"></textarea>
+            <!-- 
+            A textarea for the user to enter a longer message.
+            -->
+
             <button type="submit">Send Message</button>
+            <!-- 
+            A submit button for the contact form.
+            -->
         </form>
     </section>
 
     <!-- Footer -->
     <footer>
+        <!-- 
+        The footer typically contains additional information such as social media links or copyright.
+        -->
         <ul>
+            <!-- 
+            An unordered list that contains the social media links. The use of a list ensures good structure and organization.
+            -->
             <li><a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"><i
                         class="fa-brands fa-square-facebook"></i></a></li>
+            <!-- 
+            A list item containing a link to Facebook. 
+            The target="_blank" opens the link in a new tab, and rel="noopener noreferrer" ensures security by preventing access to the window object of the original page.
+            The Font Awesome icon (<i>) is used to represent the link with a Facebook logo.
+            -->
+
             <li><a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer"><i
                         class="fa-brands fa-x-twitter"></i></a></li>
+            <!-- 
+            A list item containing a link to Twitter with the same structure and security as the Facebook link.
+            -->
+
             <li><a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"><i
                         class="fa-brands fa-square-instagram"></i></a></li>
+            <!-- 
+            A list item containing a link to Instagram, again with the same structure and security.
+            -->
         </ul>
     </footer>
 
-    <!-- Link to the JavaScript file -->
+    <!-- JavaScript -->
     <script src="script.js"></script>
+    <!-- 
+    A script tag that links to an external JavaScript file, which contains functionality for the webpage (e.g., handling quiz logic or navigation behavior).
+    -->
 </body>
 
 </html>

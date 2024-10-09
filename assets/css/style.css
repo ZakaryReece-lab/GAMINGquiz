@@ -1,626 +1,549 @@
-/* Google Fonts import */
+/* 
+Google Fonts import:
+- Imports various font families from Google Fonts.
+- 'Honk', 'Kalnia Glaze', 'Roboto Slab', and 'Roboto' are included for styling the page with a custom and readable font.
+*/
 @import url('https://fonts.googleapis.com/css2?family=Honk&family=Kalnia+Glaze:wght@100..700&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700&display=swap');
 
-/* Basic reset to ensure consistent styling across different browsers */
+/* 
+Basic Reset:
+- Applies a basic reset to remove default padding, margin, and border-box sizing across different browsers.
+- This ensures consistency in spacing and element sizing across browsers.
+*/
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+    padding: 0; /* Removes default padding from all elements */
+    margin: 0; /* Removes default margin from all elements */
+    box-sizing: border-box; /* Ensures padding and borders are included within the element's width/height */
 }
 
-/* Header styles for Title page */
+/* 
+Header Styles:
+- Styles the header which usually contains the title of the page.
+- Sets the background color, text color, alignment, and padding.
+*/
 header {
-    width: 100%;
-    text-align: center;
-    /* Center the title */
-    background-color: #444;
-    /* Background color for the header */
-    color: #fff;
-    /* White text color for contrast */
-    margin-bottom: 2rem;
-    /* Space below the header */
-    padding: 1rem;
-    /* Padding for spacing */
+    width: 100%; /* Makes the header span the full width of the viewport */
+    text-align: center; /* Centers the text horizontally */
+    background-color: #444; /* Dark background color for the header */
+    color: #fff; /* White text color for contrast against the dark background */
+    margin-bottom: 2rem; /* Adds spacing below the header */
+    padding: 1rem; /* Adds internal spacing inside the header for better layout */
 }
 
+/* 
+Header Title (h1) Styles:
+- Styles the <h1> element inside the header for visual emphasis.
+*/
 header h1 {
-    font-weight: bold;
-    /* Make the title bold */
-    font-size: 5vw;
-    /* Responsive font size */
-    font-family: 'Kalnia Glaze', sans-serif;
-    /* Different font used for the Header of the page */
-    text-transform: uppercase;
-    /* Makes the text to uppercase, stands out better */
+    font-weight: bold; /* Makes the header text bold */
+    font-size: 5vw; /* Responsive font size based on the viewport width for scalability on different screen sizes */
+    font-family: 'Kalnia Glaze', sans-serif; /* Uses the 'Kalnia Glaze' font from Google Fonts for a unique look */
+    text-transform: uppercase; /* Converts all text to uppercase for prominence */
 }
 
-/* Body styles for overall page layout and typography */
+/* 
+Body Styles:
+- Defines global styles for the <body> element, which includes font, background image, and layout.
+*/
 body {
-    font-family: 'Roboto Slab', sans-serif;
-    background: url('../images/bodybackimg.webp') no-repeat center center fixed;
-    /* Background image for the whole page */
-    background-size: cover;
-    /* Ensure the background image covers the entire page */
-    color: #fff;
-    /* White text color for contrast */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 1rem 5%;
-    /* Padding to create a border effect */
+    font-family: 'Roboto Slab', sans-serif; /* Sets the default font for the body text */
+    background: url('../images/bodybackimg.webp') no-repeat center center fixed; /* Adds a fixed background image for the entire page */
+    background-size: cover; /* Ensures the background image covers the entire viewport */
+    color: #fff; /* White text color for better contrast against the dark background */
+    display: flex; /* Flexbox layout to arrange the content */
+    flex-direction: column; /* Arranges content vertically (header, sections, footer) */
+    align-items: center; /* Horizontally centers content */
+    padding: 1rem 5%; /* Adds padding around the content, creating space between the content and the edges of the screen */
 }
 
-/* Navigation bar styles */
+/* 
+Navigation Bar Styles:
+- Defines the styling of the <nav> element, which holds navigation links.
+*/
 nav {
-    background: #444;
-    /* Dark background for contrast */
-    color: #fff;
-    /* White text for readability */
-    padding: 1rem;
-    /* Padding for spacing */
-    width: 90%;
-    /* Fit within the border */
-    display: flex;
-    /* Flexbox for layout */
-    justify-content: center;
-    /* Center the navigation links */
-    align-items: center;
-    /* Center align items */
-    font-size: 1.25rem;
-    position: relative;
-    /* Ensure relative positioning for proper alignment */
-    border-radius: 8px;
-    /* Rounded corners for the border effect */
+    background: #444; /* Dark background color for the navigation bar */
+    color: #fff; /* White text color for contrast against the dark background */
+    padding: 1rem; /* Adds internal padding to the navigation bar for spacing */
+    width: 90%; /* Navigation bar takes up 90% of the page width, creating a border effect */
+    display: flex; /* Flexbox layout to arrange the navigation items horizontally */
+    justify-content: center; /* Centers the navigation links horizontally */
+    align-items: center; /* Aligns the navigation items vertically */
+    font-size: 1.25rem; /* Slightly larger font size for better readability */
+    position: relative; /* Relative positioning allows for further positioning of child elements */
+    border-radius: 8px; /* Adds rounded corners to the navigation bar for a smoother look */
 }
 
-/* Icon styles for mobile navigation */
+/* 
+Navigation Icon Styles (for mobile):
+- Defines the styling of the hamburger menu icon for mobile devices.
+*/
 .nav-icon {
-    display: none;
-    /* Hide by default */
+    display: none; /* Initially hides the navigation icon, only displayed on smaller screens */
 }
 
+/* 
+Navigation Icon Inner Styles:
+- Styles the <i> element inside the navigation icon.
+*/
 .nav-icon i {
-    font-size: 1.5rem;
-    /* Increase icon size */
-    cursor: pointer;
-    /* Pointer cursor on hover */
+    font-size: 1.5rem; /* Larger icon size for better visibility */
+    cursor: pointer; /* Changes the cursor to indicate the icon is clickable */
 }
 
-/* Styles for navigation links */
+/* 
+Navigation List Styles:
+- Styles the unordered list (<ul>) inside the navigation bar.
+*/
 nav ul {
-    list-style-type: none;
-    /* Remove default list styling */
-    display: flex;
-    /* Flexbox for horizontal alignment */
-    justify-content: center;
-    /* Center the items */
-    flex-wrap: wrap;
-    /* Wrap items on smaller screens */
+    list-style-type: none; /* Removes the default bullet points from the list */
+    display: flex; /* Flexbox layout to arrange list items horizontally */
+    justify-content: center; /* Centers the list items horizontally */
+    flex-wrap: wrap; /* Allows items to wrap onto a new line on smaller screens */
 }
 
+/* 
+Navigation List Item Styles:
+- Styles each list item (<li>) inside the navigation bar.
+*/
 nav ul li {
-    margin: 0.5rem 1rem;
-    /* Margin between navigation items */
+    margin: 0.5rem 1rem; /* Adds space between the navigation items */
 }
 
+/* 
+Navigation Link Styles:
+- Styles the anchor (<a>) tags inside the navigation list.
+*/
 nav ul li a {
-    color: #fff;
-    /* White text for links */
-    text-decoration: none;
-    /* Remove underline */
-    transition: color 0.3s;
-    /* Smooth color transition on hover */
+    color: #fff; /* White text color for navigation links */
+    text-decoration: none; /* Removes the default underline from links */
+    transition: color 0.3s; /* Adds a smooth transition when the link color changes */
 }
 
+/* 
+Navigation Link Hover Styles:
+- Changes the link color when hovered over to indicate interactivity.
+*/
 nav ul li a:hover {
-    color: #ff6347;
-    /* Change color on hover for interactivity */
+    color: #ff6347; /* Changes the link color to light red on hover */
 }
 
-/* Section styles for main content areas */
+/* 
+Section Styles:
+- Defines global styles for all section elements, including background, padding, and text alignment.
+*/
 section {
-    background: rgba(0, 0, 0, 0.8);
-    /* Semi-transparent black background for contrast */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    /* Subtle shadow for depth */
-    padding: 2rem;
-    /* Padding for spacing */
-    margin: 2rem 0;
-    /* Margin for spacing between sections */
-    width: 90%;
-    /* Fit within the border */
-    border-radius: 8px;
-    /* Rounded corners for a smooth look */
-    text-align: left;
-    /* Align text to the left */
-    color: #fff;
-    /* White text color */
+    background: rgba(0, 0, 0, 0.8); /* Adds a semi-transparent black background for contrast */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow to give the section depth */
+    padding: 2rem; /* Adds padding around the content inside the section */
+    margin: 2rem 0; /* Adds vertical space between sections */
+    width: 90%; /* Section takes up 90% of the page width, creating a border effect */
+    border-radius: 8px; /* Adds rounded corners for a smoother look */
+    text-align: left; /* Left-aligns the content inside the section */
+    color: #fff; /* White text color for readability against the dark background */
 }
 
-/* Home Section with Fixed Background Image */
+/* 
+Home Section Background Image:
+- Adds a specific background image for the Home section, along with styles for alignment and spacing.
+*/
 #home {
-    background-image: url('../images/background-image1.webp');
-    /* Path to the background image */
-    background-size: cover;
-    /* Ensure the image covers the entire section */
-    background-attachment: fixed;
-    /* Fix the background image */
-    background-position: center;
-    /* Center the image */
-    background-repeat: no-repeat;
-    /* Do not repeat the image */
-    color: white;
-    /* Optional: Change text color for better readability */
-    padding: 2rem;
-    /* Padding for spacing */
-    text-align: left;
-    /* Align text to the left */
+    background-image: url('../images/background-image1.webp'); /* Sets a background image for the home section */
+    background-size: cover; /* Ensures the background image covers the entire section */
+    background-attachment: fixed; /* Fixes the background image so it does not scroll with the content */
+    background-position: center; /* Centers the background image */
+    background-repeat: no-repeat; /* Ensures the background image is not repeated */
+    padding: 2rem; /* Adds padding around the content inside the home section */
+    text-align: left; /* Left-aligns the text inside the home section */
 }
 
-/* Quiz Section with Background Image */
+/* 
+Quiz Section Background Image:
+- Adds a specific background image for the Quiz section, along with similar styles for alignment and spacing.
+*/
 #quiz {
-    background-image: url('../images/background-image2.webp');
-    /* Path to the background image */
-    background-size: cover;
-    /* Ensure the image covers the entire section */
-    background-position: center;
-    /* Center the image */
-    background-repeat: no-repeat;
-    /* Do not repeat the image */
-    color: white;
-    /* Optional: Change text color for better readability */
-    padding: 2rem;
-    /* Padding for spacing */
-    text-align: left;
-    /* Align text to the left */
+    background-image: url('../images/background-image2.webp'); /* Sets a background image for the quiz section */
+    background-size: cover; /* Ensures the background image covers the entire section */
+    background-position: center; /* Centers the background image */
+    background-repeat: no-repeat; /* Ensures the background image is not repeated */
+    padding: 2rem; /* Adds padding around the content inside the quiz section */
+    text-align: left; /* Left-aligns the text inside the quiz section */
 }
 
-\#quiz textarea {
-    width: 100%;
-    max-width: 300px;
-    /* Smaller width for the textarea */
-    height: 50px;
-    /* Smaller height */
-    padding: 0.5rem;
-    border-radius: 4px;
-    border: 1px solid #ddd;
-    margin-bottom: 1rem;
+/* 
+Quiz Textarea Styles:
+- Defines the size and appearance of the textarea used in the quiz section.
+*/
+#quiz textarea {
+    width: 100%; /* Ensures the textarea takes up the full width of its container */
+    max-width: 300px; /* Sets a maximum width for the textarea */
+    height: 50px; /* Defines the height of the textarea */
+    padding: 0.5rem; /* Adds padding inside the textarea for comfort while typing */
+    border-radius: 4px; /* Adds rounded corners for a modern look */
+    border: 1px solid #ddd; /* Adds a light border around the textarea */
+    margin-bottom: 1rem; /* Adds spacing below the textarea */
 }
 
+/* 
+Quiz Button Styles:
+- Styles the buttons used in the quiz section, including their size, color, and hover effects.
+*/
 #quiz button {
-    width: 100%;
-    max-width: 300px;
-    /* Same width as textarea */
-    padding: 0.5rem;
-    border: none;
-    border-radius: 4px;
-    background: #ff6347;
-    color: #fff;
-    cursor: pointer;
-    transition: background 0.3s;
-    margin-bottom: 1rem;
+    width: 100%; /* Ensures the button takes up the full width of its container */
+    max-width: 300px; /* Sets a maximum width for the button */
+    padding: 0.5rem; /* Adds padding inside the button for comfortable clicking */
+    border: none; /* Removes the default border for a clean look */
+    border-radius: 4px; /* Adds rounded corners to the button */
+    background: #ff6347; /* Default background color for the button */
+    color: #fff; /* White text color for contrast */
+    cursor: pointer; /* Changes the cursor to indicate that the button is clickable */
+    transition: background 0.3s; /* Adds a smooth transition when the background color changes */
+    margin-bottom: 1rem; /* Adds spacing below the button */
 }
 
+/* 
+Quiz Button Hover Styles:
+- Changes the background color of the button when hovered over to indicate interactivity.
+*/
 #quiz button:hover {
-    background: #ff4500;
-    /* Darker background on hover */
+    background: #ff4500; /* Darkens the background color on hover */
 }
 
+/* 
+Quiz Section for Questions:
+- Adds specific styles for the container that holds quiz questions.
+*/
 .question-container {
-    width: 100%;
+    width: 100%; /* Ensures the question container takes up the full width of its parent */
 }
 
+/* 
+Paragraph Styling in Question Container:
+- Left-aligns the paragraph text inside the question container.
+*/
 .question-container p {
-    text-align: left;
-    /* Ensure questions are aligned to the left */
+    text-align: left; /* Left-aligns the question text for readability */
 }
 
+/* 
+Label Styles in Question Container:
+- Makes labels block elements and adds spacing for better layout and readability.
+*/
 .question-container label {
-    display: block;
-    /* Make labels block elements */
-    margin-bottom: 0.5rem;
-    /* Space between options */
-    text-align: left;
-    /* Ensure options are aligned to the left */
+    display: block; /* Makes the label take up the full width of its container */
+    margin-bottom: 0.5rem; /* Adds spacing below the label */
+    text-align: left; /* Left-aligns the label text */
 }
 
-/* Feedback Section with Background Image */
+/* 
+Feedback Section Background Image:
+- Adds a specific background image for the Feedback section.
+*/
 #feedback {
-    background-image: url('../images/background-image3.webp');
-    /* Path to the background image */
-    background-size: cover;
-    /* Ensure the image covers the entire section */
-    background-position: center;
-    /* Center the image */
-    background-repeat: no-repeat;
-    /* Do not repeat the image */
-    color: white;
-    /* Optional: Change text color for better readability */
-    padding: 2rem;
-    /* Padding for spacing */
-    text-align: left;
-    /* Align text to the left */
+    background-image: url('../images/background-image3.webp'); /* Sets a background image for the feedback section */
+    background-size: cover; /* Ensures the background image covers the entire section */
+    background-position: center; /* Centers the background image */
+    background-repeat: no-repeat; /* Ensures the background image is not repeated */
+    color: white; /* Sets the text color to white for contrast against the background */
+    padding: 2rem; /* Adds padding around the content inside the feedback section */
+    text-align: left; /* Left-aligns the text inside the feedback section */
 }
 
-/* Contact Section with Background Image */
+/* 
+Contact Section Background Image:
+- Adds a specific background image for the Contact section.
+*/
 #contact {
-    background-image: url('../images/background-image4.webp');
-    /* Path to the background image */
-    background-size: cover;
-    /* Ensure the image covers the entire section */
-    background-position: center;
-    /* Center the image */
-    background-repeat: no-repeat;
-    /* Do not repeat the image */
-    color: white;
-    /* Optional: Change text color for better readability */
-    padding: 2rem;
-    /* Padding for spacing */
-    text-align: left;
-    /* Align text to the left */
+    background-image: url('../images/background-image4.webp'); /* Sets a background image for the contact section */
+    background-size: cover; /* Ensures the background image covers the entire section */
+    background-position: center; /* Centers the background image */
+    background-repeat: no-repeat; /* Ensures the background image is not repeated */
+    color: white; /* Sets the text color to white for contrast against the background */
+    padding: 2rem; /* Adds padding around the content inside the contact section */
+    text-align: left; /* Left-aligns the text inside the contact section */
 }
 
-/* Feedback form styles */
+/* 
+Feedback Form Styles:
+- Styles the feedback form inside the feedback section, including labels, textareas, and buttons.
+*/
 #feedback-form {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
+    display: flex; /* Flexbox layout to arrange form elements vertically */
+    flex-direction: column; /* Ensures form elements are arranged in a column */
+    align-items: flex-start; /* Aligns form elements to the left */
+    width: 100%; /* Form takes up the full width of its container */
 }
 
+/* 
+Feedback Form Label Styles:
+- Styles the labels inside the feedback form.
+*/
 #feedback-form label {
-    margin-top: 1rem;
-    margin-bottom: 0.5rem;
-    font-size: 1rem;
-    color: #fff;
-    /* White text color */
+    margin-top: 1rem; /* Adds space above the label */
+    margin-bottom: 0.5rem; /* Adds space below the label */
+    font-size: 1rem; /* Sets a base font size for the labels */
+    color: #fff; /* White text color for contrast */
 }
 
+/* 
+Textarea Styles in Feedback Form:
+- Styles the textarea used in the feedback form.
+*/
 #feedback-form textarea {
-    width: 100%;
-    max-width: 400px;
-    /* Smaller width */
-    height: 80px;
-    /* Smaller height */
-    padding: 0.5rem;
-    border-radius: 4px;
-    border: 1px solid #ddd;
+    width: 100%; /* Ensures the textarea takes up the full width of its container */
+    max-width: 400px; /* Sets a maximum width for the textarea */
+    height: 80px; /* Sets a fixed height for the textarea */
+    padding: 0.5rem; /* Adds padding inside the textarea for comfort while typing */
+    border-radius: 4px; /* Adds rounded corners to the textarea */
+    border: 1px solid #ddd; /* Adds a light border around the textarea */
 }
 
+/* 
+Feedback Form Button Styles:
+- Styles the button used in the feedback form for submitting feedback.
+*/
 #feedback-form button {
-    width: 100%;
-    max-width: 400px;
-    /* Same width as textarea */
-    padding: 0.75rem;
-    border: none;
-    border-radius: 4px;
-    background: #ff6347;
-    color: #fff;
-    cursor: pointer;
-    transition: background 0.3s;
+    width: 100%; /* Ensures the button takes up the full width of its container */
+    max-width: 400px; /* Sets a maximum width for the button */
+    padding: 0.75rem; /* Adds padding inside the button for comfortable clicking */
+    border: none; /* Removes the default border for a clean look */
+    border-radius: 4px; /* Adds rounded corners to the button */
+    background: #ff6347; /* Default background color for the button */
+    color: #fff; /* White text color for contrast */
+    cursor: pointer; /* Changes the cursor to a pointer to indicate interactivity */
+    transition: background 0.3s; /* Adds a smooth transition when the background color changes */
 }
 
+/* 
+Feedback Form Button Hover Styles:
+- Changes the background color of the button when hovered over to indicate interactivity.
+*/
 #feedback-form button:hover {
-    background: #ff4500;
-    /* Darker background on hover */
+    background: #ff4500; /* Darkens the background color on hover */
 }
 
-/* Contact form styles */
+/* 
+Contact Form Styles:
+- Styles the contact form, ensuring consistency with the feedback form.
+*/
 #contact-form {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
+    display: flex; /* Flexbox layout to arrange form elements vertically */
+    flex-direction: column; /* Arranges form elements in a vertical column */
+    align-items: flex-start; /* Aligns form elements to the left */
+    width: 100%; /* Contact form takes up the full width of its container */
 }
 
+/* 
+Label Styles for Contact Form:
+- Similar to the feedback form, applies consistent styling to labels in the contact form.
+*/
 #contact-form label {
-    margin-top: 1rem;
-    margin-bottom: 0.5rem;
-    font-size: 1rem;
-    color: #fff;
-    /* White text color */
+    margin-top: 1rem; /* Adds space above the label */
+    margin-bottom: 0.5rem; /* Adds space below the label */
+    font-size: 1rem; /* Sets the font size of the label text */
+    color: #fff; /* White text color for contrast */
 }
 
+/* 
+Contact Form Input and Textarea Styles:
+- Styles the input fields and textarea inside the contact form.
+*/
 #contact-form input,
 #contact-form textarea {
-    width: 100%;
-    max-width: 400px;
-    /* Smaller width */
-    padding: 0.5rem;
-    border-radius: 4px;
-    border: 1px solid #ddd;
-    margin-bottom: 1rem;
+    width: 100%; /* Ensures the form fields take up the full width of their container */
+    max-width: 400px; /* Sets a maximum width for the form fields */
+    padding: 0.5rem; /* Adds padding inside the form fields */
+    border-radius: 4px; /* Adds rounded corners to the form fields */
+    border: 1px solid #ddd; /* Adds a light border around the form fields */
+    margin-bottom: 1rem; /* Adds space below each form field */
 }
 
+/* 
+Textarea Specific Styles in Contact Form:
+- Additional height applied to textareas in the contact form.
+*/
 #contact-form textarea {
-    height: 80px;
-    /* Smaller height */
+    height: 80px; /* Sets a fixed height for the textarea */
 }
 
+/* 
+Contact Form Button Styles:
+- Styles the button used in the contact form.
+*/
 #contact-form button {
-    width: 100%;
-    max-width: 400px;
-    /* Same width as input and textarea */
-    padding: 0.75rem;
-    border: none;
-    border-radius: 4px;
-    background: #ff6347;
-    color: #fff;
-    cursor: pointer;
-    transition: background 0.3s;
+    width: 100%; /* Ensures the button takes up the full width of its container */
+    max-width: 400px; /* Sets a maximum width for the button */
+    padding: 0.75rem; /* Adds padding inside the button */
+    border: none; /* Removes the default border for a clean look */
+    border-radius: 4px; /* Adds rounded corners to the button */
+    background: #ff6347; /* Default background color for the button */
+    color: #fff; /* White text color for contrast */
+    cursor: pointer; /* Changes the cursor to a pointer to indicate interactivity */
+    transition: background 0.3s; /* Adds a smooth transition when the background color changes */
 }
 
+/* 
+Contact Form Button Hover Styles:
+- Changes the background color of the button when hovered over.
+*/
 #contact-form button:hover {
-    background: #ff4500;
-    /* Darker background on hover */
+    background: #ff4500; /* Darkens the background color on hover */
 }
 
-/* Styles for inputs, textareas, and buttons */
+/* 
+Global Input, Textarea, and Button Styles:
+- Applies consistent styles to input fields, textareas, and buttons across the site.
+*/
 input,
 textarea,
 button {
-    padding: 0.75rem;
-    /* Padding for comfort */
-    border: 1px solid #ddd;
-    /* Light border */
-    border-radius: 4px;
-    /* Rounded corners */
-    margin: 0.5rem 0;
-    /* Margin for spacing */
-    width: 100%;
-    /* Full width */
-    max-width: 400px;
-    /* Maximum width for readability */
+    padding: 0.75rem; /* Adds padding inside these elements for comfort while interacting */
+    border: 1px solid #ddd; /* Adds a light border to all input fields, textareas, and buttons */
+    border-radius: 4px; /* Adds rounded corners for a modern look */
+    margin: 0.5rem 0; /* Adds space above and below these elements */
+    width: 100%; /* Ensures these elements take up the full width of their container */
+    max-width: 400px; /* Sets a maximum width for consistency */
 }
 
+/* 
+Radio Button Styles:
+- Customizes the appearance of radio buttons.
+*/
 input[type="radio"] {
-    width: auto;
-    /* Ensure radio buttons are inline */
-    margin-right: 0.5rem;
+    width: auto; /* Ensures radio buttons are inline and not stretched */
+    margin-right: 0.5rem; /* Adds space to the right of radio buttons */
 }
 
-/* Button specific styles */
+/* 
+Button Specific Styles:
+- Additional styles specific to buttons to maintain consistency across the site.
+*/
 button {
-    background: #ff6347;
-    /* Background color for buttons */
-    color: #fff;
-    /* White text */
-    border: none;
-    /* No border */
-    cursor: pointer;
-    /* Pointer cursor on hover */
-    transition: background 0.3s;
-    /* Smooth background transition on hover */
-    max-width: 400px;
-    /* Ensure the buttons have the same max width as the textareas */
+    background: #ff6347; /* Default background color for all buttons */
+    color: #fff; /* White text color for contrast */
+    border: none; /* Removes the default border from buttons */
+    cursor: pointer; /* Changes the cursor to indicate the button is clickable */
+    transition: background 0.3s; /* Smooth transition when background color changes */
+    max-width: 400px; /* Sets a consistent maximum width for buttons */
 }
 
+/* 
+Button Hover State:
+- Changes the button background color when hovered over.
+*/
 button:hover {
-    background: #ff4500;
-    /* Darker background on hover */
+    background: #ff4500; /* Darkens the background color on hover */
 }
 
-/* Additional styles for the contact form and feedback form */
-#contact {
-    font-size: 1.5rem;
-    /* Slightly bigger font size */
-}
-
-#feedback {
-    font-size: 1.5rem;
-    /* Slightly bigger font size */
-}
-
-/* Footer specific styles */
+/* 
+Footer Styles:
+- Styles the footer, including background color, text color, and alignment.
+*/
 footer {
-    background: #444;
-    /* Dark background */
-    color: #fff;
-    /* White text */
-    text-align: center;
-    /* Center text */
-    padding: 1rem;
-    /* Padding for comfort */
-    width: 100%;
-    /* Full width */
-    position: fixed;
-    /* Fixed position at the bottom */
-    bottom: 0;
-    /* Align to bottom */
-    display: flex;
-    /* Flexbox layout */
-    justify-content: center;
-    /* Center align items */
+    background: #444; /* Dark background color for the footer */
+    color: #fff; /* White text color for contrast */
+    text-align: center; /* Centers the text inside the footer */
+    padding: 1rem; /* Adds padding inside the footer for spacing */
+    width: 100%; /* Ensures the footer takes up the full width of the page */
+    position: fixed; /* Fixes the footer to the bottom of the page */
+    bottom: 0; /* Aligns the footer to the bottom of the viewport */
+    display: flex; /* Flexbox layout to arrange footer content */
+    justify-content: center; /* Centers the footer items horizontally */
 }
 
+/* 
+Footer List Styles:
+- Styles the unordered list inside the footer to display social media icons.
+*/
 footer ul {
-    list-style-type: none;
-    /* Remove default list styling */
-    display: flex;
-    /* Flexbox for horizontal alignment */
-    justify-content: center;
-    /* Center the items */
-    width: 100%;
-    /* Ensure full width */
+    list-style-type: none; /* Removes the default list styling */
+    display: flex; /* Flexbox layout to arrange the items horizontally */
+    justify-content: center; /* Centers the list items horizontally */
+    width: 100%; /* Ensures the list takes up the full width of the footer */
 }
 
+/* 
+Footer List Item Styles:
+- Styles each list item in the footer, adding space between them.
+*/
 footer ul li {
-    margin: 0 2rem;
-    /* Increased margin for more space between footer items */
+    margin: 0 2rem; /* Adds horizontal space between the list items */
 }
 
+/* 
+Footer Link Styles:
+- Styles the anchor (<a>) tags inside the footer.
+*/
 footer ul li a {
-    color: #fff;
-    /* White text for links */
-    text-decoration: none;
-    /* Remove underline */
-    font-size: 2rem;
-    /* Increase font size for larger icons */
-    transition: color 0.3s;
-    /* Smooth color transition on hover */
+    color: #fff; /* White text color for the footer links */
+    text-decoration: none; /* Removes the default underline from links */
+    font-size: 2rem; /* Increases the font size for larger social media icons */
+    transition: color 0.3s; /* Adds a smooth transition when the link color changes */
 }
 
+/* 
+Footer Link Hover Styles:
+- Changes the color of the social media icons when hovered over to indicate interactivity.
+*/
 footer ul li a:hover {
-    color: #ff6347;
-    /* Change color on hover for interactivity */
+    color: #ff6347; /* Changes the icon color to light red on hover */
 }
 
-/* Media Queries for Responsive Design */
+/* 
+Media Queries:
+- Responsive design tweaks for various screen sizes to ensure the page looks good on all devices.
+*/
 
-/* Mobile devices (max-width: 600px) */
+/* Mobile Devices (max-width: 600px) */
 @media (max-width: 600px) {
     .nav-icon {
-        display: block;
-        /* Show icon on mobile devices */
-        position: absolute;
-        /* Position absolute for better control */
-        left: 1rem;
-        /* Align icon to the left */
+        display: block; /* Shows the navigation icon (hamburger menu) on smaller screens */
+        position: absolute; /* Absolute positioning allows control over the icon's placement */
+        left: 1rem; /* Aligns the icon to the left of the screen */
     }
 
     nav ul {
-        display: none;
-        /* Hide navigation links */
-        flex-direction: column;
-        /* Stack items vertically */
-        align-items: center;
-        /* Center align items */
-        background: #444;
-        /* Same background color as navbar */
-        width: 100%;
-        /* Full width */
-        position: absolute;
-        /* Position absolute for proper alignment */
-        top: 100%;
-        /* Position below the navbar */
-        left: 0;
-        /* Align to the left */
+        display: none; /* Hides the navigation links on smaller screens */
+        flex-direction: column; /* Stacks the navigation items vertically */
+        align-items: center; /* Centers the navigation items */
+        background: #444; /* Matches the background color of the navbar */
+        width: 100%; /* Full width for the navigation menu */
+        position: absolute; /* Positions the navigation absolutely to control its placement */
+        top: 100%; /* Places the menu directly below the navbar */
+        left: 0; /* Aligns the navigation to the left edge of the screen */
     }
 
     nav ul.active {
-        display: flex;
-        /* Display navigation links when menu is active */
+        display: flex; /* Displays the navigation menu when it's active */
     }
 
+    /* Additional adjustments for smaller screens */
     header h1 {
-        font-size: 8vw;
-        /* Adjusted for smaller screens */
+        font-size: 8vw; /* Larger font size for the header title on small screens */
     }
 
-    /* Adjust background images for mobile */
-    #home,
-    #quiz,
-    #feedback,
-    #contact {
-        background-size: cover;
-        /* Ensure the image covers the entire section */
-    }
-
+    /* Adjustments to sections for mobile devices */
     section {
-        padding: 1rem;
-        /* Reduce padding for smaller screens */
-        margin: 1rem 0;
-        /* Reduce margin for smaller screens */
-        width: 100%;
-        /* Ensure full width on mobile screens */
+        padding: 1rem; /* Reduces padding on small screens to avoid overcrowding */
+        margin: 1rem 0; /* Reduces margin for better spacing */
+        width: 100%; /* Ensures sections take up full width on mobile */
     }
 
     input,
     textarea,
     button {
-        max-width: 100%;
-        /* Ensure full width on mobile screens */
+        max-width: 100%; /* Ensures form elements take up full width on smaller screens */
     }
 
-    /* Add margin-bottom to the contact section to avoid overlap with footer */
     #contact {
-        margin-bottom: 100px;
-        /* Adjust the value as needed */
+        margin-bottom: 100px; /* Adds extra space at the bottom of the contact section to prevent overlap with the footer */
     }
 
-    /* Adjust footer icons for mobile */
+    /* Footer adjustments for small screens */
     footer ul li {
-        margin: 0 1rem;
-        /* Reduce margin for more space between footer items */
+        margin: 0 1rem; /* Reduces the space between footer icons on mobile devices */
     }
 
     footer ul li a {
-        font-size: 1.5rem;
-        /* Adjust font size for smaller icons */
-    }
-}
-
-/* Tablets and larger devices (min-width: 600px) */
-@media (min-width: 600px) {
-    body {
-        padding: 2rem 5%;
-        /* Adjust padding for the border effect */
-    }
-
-    nav ul li {
-        margin: 0 1.5rem;
-    }
-
-    section {
-        padding: 2.5rem;
-        margin: 2.5rem 0;
-        width: 90%;
-        /* Ensure the border effect */
-    }
-
-    input,
-    textarea,
-    button {
-        max-width: 700px;
-    }
-}
-
-/* Laptops and larger devices (min-width: 992px) */
-@media (min-width: 992px) {
-    body {
-        padding: 3rem 5%;
-        /* Adjust padding for the border effect */
-    }
-
-    nav ul li {
-        margin: 0 2rem;
-    }
-
-    section {
-        padding: 3rem;
-        margin: 3rem 0;
-        width: 90%;
-        /* Ensure the border effect */
-    }
-
-    input,
-    textarea,
-    button {
-        max-width: 800px;
-    }
-}
-
-/* Desktops and larger devices (min-width: 1200px) */
-@media (min-width: 1200px) {
-    body {
-        padding: 4rem 5%;
-        /* Adjust padding for the border effect */
-    }
-
-    nav ul li {
-        margin: 0 2.5rem;
-    }
-
-    section {
-        padding: 3.5rem;
-        margin: 3.5rem 0;
-        width: 90%;
-        /* Ensure the border effect */
-    }
-
-    input,
-    textarea,
-    button {
-        max-width: 900px;
+        font-size: 1.5rem; /* Reduces icon size for smaller screens */
     }
 }
